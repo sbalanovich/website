@@ -7,10 +7,11 @@ body {
   background-color:#000;
   height:100%;
   width:100%;
-  min-height: 100%;
+  max-width: 100%;
   padding:0;
   margin:0;
   background-image: url("./images/SplashBackground.jpg");
   background-size:cover;
-  background-position: center;
+  background-position: top;
+  background-repeat: no-repeat;
 }
