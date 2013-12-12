@@ -29,12 +29,10 @@ function show(text){
 			//Insert Regression function Here
 			output = "Woo Hoo! It looks like when this post settles down, it will have a score of: "
 			document.getElementById("scoreOutput").innerHTML = output;
-			var score = data[1];
-			var prob = data[0]
+			var score = data;
 			document.getElementById("scoreValue").innerHTML = score;
-			output2 = "So how was this done? Well we used our CLF to predict the probability of your post being popular, which ended up being: "			
+			output2 = "So how was this done? Well we used our CLF to predict the probability of your post being popular."			
 			document.getElementById("scoreOutput2").innerHTML = output2;
-			document.getElementById("scoreValue2").innerHTML = score;
 			output3 = "Then we ran it through our regression model to predict your score! If you'd like to see more about what we did, check out the links on the left or visit our <a href='http://nbviewer.ipython.org/github/intelligent-dolphins/blob/master/ProcessBook.ipynb'>Process Book</a> "			
 			document.getElementById("scoreOutput3").innerHTML = output3;
 			output4 = ""

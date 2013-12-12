@@ -15,6 +15,32 @@ def index(request):
 	context = RequestContext(request, {})
 	return HttpResponse(template.render(context))
 
+def collect(request):
+    template = loader.get_template('visualization/collect.html')
+    context = RequestContext(request, {})
+    return HttpResponse(template.render(context))
+
+def build(request):
+    template = loader.get_template('visualization/build.html')
+    context = RequestContext(request, {})
+    return HttpResponse(template.render(context))
+
+def visualize(request):
+    template = loader.get_template('visualization/visualize.html')
+    context = RequestContext(request, {})
+    return HttpResponse(template.render(context))
+
+def findings(request):
+    template = loader.get_template('visualization/findings.html')
+    context = RequestContext(request, {})
+    return HttpResponse(template.render(context))
+
+def about(request):
+    template = loader.get_template('visualization/about.html')
+    context = RequestContext(request, {})
+    return HttpResponse(template.render(context))
+
+
 @csrf_exempt
 def test_ajax(request):
     if request.is_ajax():
@@ -31,9 +57,9 @@ def test_ajax(request):
         def predict(title):
         	x = clf.predict_proba(vect.transform([title]))[0][1]
         	y = m*x + b
-        	return (x, y)
-        (prob, prediction) = predict(title)
-    	return HttpResponse(json.dumps(list([prob, prediction])))
+        	return y
+        prediction = predict(title)
+    	return HttpResponse(json.dumps(prediction)))
 
 '''
 def predict(request):
