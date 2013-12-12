@@ -34,9 +34,9 @@ def test_ajax(request):
         def predict(title):
         	x = clf.predict_proba(vect.transform([title]))[0][1]
         	y = m*x + b
-        	return (x, y)
-        prob, prediction = predict(title)
-    	return HttpResponse(json.dumps([prob, prediction]))
+        	return y
+        prediction = predict(title)
+    	return HttpResponse(json.dumps(prediction))
 
 '''
 def predict(request):
