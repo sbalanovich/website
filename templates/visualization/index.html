@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>RedditScience by Serguei, Jay, and Sebastian</title>
     {% load staticfiles %}
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'visualization/css/bootstrap.css' %}" rel="stylesheet">
@@ -24,46 +24,38 @@
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-          <li class="sidebar-brand"><a href="#">Start G Bootstrap</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Shortcuts</a></li>
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">Events</a></li>
+          <img id = "logo" src="http://www.redditstatic.com/about/assets/reddit-alien.png">
+          <li class="sidebar-brand"><a href="#">RedditScience</a></li>
+          <li><a href="#">Collecting the Data</a></li>
+          <li><a href="#">Visulaizing the Data</a></li>
+          <li><a href="#">Building the Model</a></li>
+          <li><a href="#">Findings</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
         </ul>
       </div>
           
       <!-- Page content -->
       <div id="page-content-wrapper">
         <div class="content-header">
+          <div>
+
+          </div>
           <h1>
             <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-            Simple Sidebar
+            RedditScience
           </h1>
         </div>
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
           <div class="row">
             <div class="col-md-12">
-              <p class="lead">This simple sidebar template has a hint of JavaScript to make the template responsive. It also includes Font Awesome icon fonts.</p>
-            </div>
-            <div class="col-md-6">
-              <p class="well">The template still uses the default Bootstrap rows and columns.</p>
-            </div>
-            <div class="col-md-6">
-              <p class="well">But the full-width layout means that you wont be using containers.</p>
-            </div>
-            <div class="col-md-4">
-              <p class="well">Three Column Example</p>
-            </div>
-            <div class="col-md-4">
-              <p class="well">Three Column Example</p>
-            </div>
-            <div class="col-md-4">
-              <p class="well">You get the idea! Do whatever you want in the page content area!</p>
-            </div>
+              <p class="well">Welcome to RedditScience! A CS 109 Final Project by Serguei Balanovich, Jay Sayre, and Sebastian Gehrmann.</p>
+              <p class="well">Want to give our project a try? Type in a Reddit Title (existing or fake) below and we'll try our best to predict its score!</p>
+              <input type='text' id='largeTextbox' placeholder="Input Reddit Title.." class="shadow_select" formmethod="post"></input>
+              <input type=button name=button class="btn btn-success" id="submitButton" value="Get score!" onclick="show(document.getElementById('largeTextbox').value)"/>
+              <div id="scoreOutput"></div>
+              <div id="scoreValue"></div>
+            </div>            
           </div>
         </div>
       </div>
@@ -73,6 +65,7 @@
     <!-- JavaScript -->
     <script src="{% static 'visualization/js/jquery-1.10.2.js' %}"></script>
     <script src="{% static 'visualization/js/bootstrap.js' %}"></script>
+    <script src="{% static 'visualization/js/myjs.js' %}"></script> 
 
     <!-- Custom JavaScript for the Menu Toggle -->
     <script>
