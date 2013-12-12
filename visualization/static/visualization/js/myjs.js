@@ -29,7 +29,8 @@ function show(text){
 			//Insert Regression function Here
 			output = "Woo Hoo! It looks like when this post settles down, it will have a score of: "
 			document.getElementById("scoreOutput").innerHTML = output;
-			[score, prob] = data
+			var score = data[0];
+			var prob = data[1];
 			document.getElementById("scoreValue").innerHTML = score;
 			output2 = "So how was this done? Well we used our CLF to predict the probability of your post being popular, which ended up being: "			
 			document.getElementById("scoreOutput2").innerHTML = output2;
