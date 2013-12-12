@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Preddict It! By Serguei, Jay, and Sebastian</title>
+    {% load staticfiles %}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'visualization/css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link rel="stylesheet" type="text/css" href="{% static 'visualization/css/simple-sidebar.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static '/visualization/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+  
+    <div id="wrapper">
+      
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+          <img id = "logo" src="http://www.redditstatic.com/about/assets/reddit-alien.png">
+          <li class="sidebar-brand"><a href="index.html">Preddict It!</a></li>
+          <li><a href="collect.html">Collecting the Data</a></li>
+          <li><a href="visualize.html">Visulaizing the Data</a></li>
+          <li><a href="build.html">Building the Model</a></li>
+          <li><a href="findings.html">Findings</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
