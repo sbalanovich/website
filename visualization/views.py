@@ -7,10 +7,11 @@ import sklearn
 import numpy as np
 import scipy
 import json
+import pickle
 
 def index(request):
 	template = loader.get_template('visualization/index.html')
-	context = RequestContext(request, {"prediction": "lol"})
+	context = RequestContext(request, {})
 	return HttpResponse(template.render(context))
 
 @csrf_exempt
@@ -19,7 +20,7 @@ def test_ajax(request):
     	title = request.POST['title']
         title = "If the Big Bang happened 13.7 Billion years ago, how is the edge of the observable universe 16 Billion light years away? Did the universe expand faster than the speed of light?"
         m, b = (2, 5)
-        with open('filename.pickle', 'rb') as handle:
+        with open('visualization/clf.pickle', 'rb') as handle:
         	b = pickle.load(handle)
         clf, vect = b
         m = 1727.23857077
