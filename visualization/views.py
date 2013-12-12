@@ -22,10 +22,10 @@ def test_ajax(request):
         m, b = (2, 5)
         try:
         	with open('visualization/clf.pickle', 'rb') as handle:
-        		b = pickle.load(handle)
+        		tup = pickle.load(handle)
         except Exception, e:
         	print str(e)
-        clf, vect = b
+        clf, vect = tup
         m = 1727.23857077
         b = -409.438149837
         def predict(title):
