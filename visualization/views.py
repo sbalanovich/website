@@ -19,8 +19,7 @@ def index(request):
 def test_ajax(request):
     if request.is_ajax():
     	title = request.POST['title']
-        title = "If the Big Bang happened 13.7 Billion years ago, how is the edge of the observable universe 16 Billion light years away? Did the universe expand faster than the speed of light?"
-        m, b = (2, 5)
+        m, b = (1727.23857077, -409.438149837)
         module_dir = os.path.dirname(__file__)
         file_path = os.path.join(module_dir, 'clf.dat')
         try:
@@ -29,14 +28,12 @@ def test_ajax(request):
         except Exception, e:
             print str(e)
         clf, vect = tup
-        m = 1727.23857077
-        b = -409.438149837
         def predict(title):
         	x = clf.predict_proba(vect.transform([title]))[0][1]
         	y = m*x + b
-        	return y
-        prediction = predict(title)
-    	return HttpResponse(json.dumps(prediction))
+        	return (x, y)
+        (prob, prediction) = predict(title)
+    	return HttpResponse(json.dumps(np.array(prob, prediction)))
 
 '''
 def predict(request):
