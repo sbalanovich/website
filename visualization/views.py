@@ -22,7 +22,7 @@ def test_ajax(request):
         title = "If the Big Bang happened 13.7 Billion years ago, how is the edge of the observable universe 16 Billion light years away? Did the universe expand faster than the speed of light?"
         m, b = (2, 5)
         module_dir = os.path.dirname(__file__)
-        file_path = os.path.join(module_dir, 'clf.pickle')
+        file_path = os.path.join(module_dir, 'clf.dat')
         try:
             with open(file_path, 'rb') as handle:
                 tup = pickle.load(handle)
