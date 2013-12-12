@@ -33,7 +33,7 @@ def test_ajax(request):
         	y = m*x + b
         	return (x, y)
         (prob, prediction) = predict(title)
-    	return HttpResponse(json.dumps(np.array(prob, prediction)))
+    	return HttpResponse(json.dumps(list(prob, prediction)))
 
 '''
 def predict(request):
