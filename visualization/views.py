@@ -8,6 +8,7 @@ import numpy as np
 import scipy
 import json
 import pickle
+import os
 
 def index(request):
 	template = loader.get_template('visualization/index.html')
@@ -20,8 +21,10 @@ def test_ajax(request):
     	title = request.POST['title']
         title = "If the Big Bang happened 13.7 Billion years ago, how is the edge of the observable universe 16 Billion light years away? Did the universe expand faster than the speed of light?"
         m, b = (2, 5)
+        module_dir = os.path.dirname(__file__)
+        file_path = os.path.join(module_dir, 'clf.pickle')
         try:
-        	with open('clf.pickle', 'rb') as handle:
+        	with open(file_path, 'rb') as handle:
         		tup = pickle.load(handle)
         except Exception, e:
         	print str(e)
