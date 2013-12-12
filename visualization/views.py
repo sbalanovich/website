@@ -20,8 +20,11 @@ def test_ajax(request):
     	title = request.POST['title']
         title = "If the Big Bang happened 13.7 Billion years ago, how is the edge of the observable universe 16 Billion light years away? Did the universe expand faster than the speed of light?"
         m, b = (2, 5)
-        with open('visualization/clf.pickle', 'rb') as handle:
-        	b = pickle.load(handle)
+        try:
+        	with open('visualization/clf.pickle', 'rb') as handle:
+        		b = pickle.load(handle)
+        except IOError:
+        	return HttpResponse(json.dumps(["Unable to retrieve CLF", "Unable to retrieve CLF"]))
         clf, vect = b
         m = 1727.23857077
         b = -409.438149837
@@ -30,7 +33,7 @@ def test_ajax(request):
         	y = m*x + b
         	return y
         prediction = predict(title)
-    	return HttpResponse(json.dumps(title))
+    	return HttpResponse(json.dumps([title, title]))
 
 '''
 def predict(request):

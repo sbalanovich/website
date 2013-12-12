@@ -43,6 +43,35 @@
   font-color: blue;
 }
 
+#scoreOutput2 {
+  padding-top: 4%;
+  padding-left: 2%;
+  font-size: 20px;
+  width: 75%;
+}
+
+#scoreOutput3 {
+  padding-top: 4%;
+  padding-left: 2%;
+  font-size: 20px;
+  width: 75%;
+}
+
+#scoreOutput4 {
+  padding-top: 4%;
+  padding-left: 2%;
+  font-size: 20px;
+  width: 75%;
+}
+
+#scoreValue2 {
+  padding-top: 4%;
+  padding-left: 2%;
+  font-size: 40px;
+  font-color: blue;
+}
+
+
 #yourcode {
   visibility: hidden;
 }
