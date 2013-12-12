@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template.response import SimpleTemplateResponse
 from django.template import RequestContext, loader
 from django.views.decorators.csrf import csrf_exempt
-import scikit
+import sklearn
 import numpy as np
 import scipy
 import json
