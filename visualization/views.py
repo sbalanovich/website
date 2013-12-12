@@ -24,21 +24,19 @@ def test_ajax(request):
         module_dir = os.path.dirname(__file__)
         file_path = os.path.join(module_dir, 'clf.pickle')
         try:
-        	with open(file_path, 'rb') as handle:
-        		tup = pickle.load(handle)
-                return HttpResponse(json.dumps(["lol", "lol"]))
+            with open(file_path, 'rb') as handle:
+                tup = pickle.load(handle)
         except Exception, e:
-        	print str(e)
-            return HttpResponse(json.dumps(["lolz", "lolz"]))
+            print str(e)
         clf, vect = tup
         m = 1727.23857077
         b = -409.438149837
         def predict(title):
         	x = clf.predict_proba(vect.transform([title]))[0][1]
         	y = m*x + b
-        	return y
-        prediction = predict(title)
-    	return HttpResponse(json.dumps([title, title]))
+        	return (x, y)
+        prob, prediction = predict(title)
+    	return HttpResponse(json.dumps([prob, prediction]))
 
 '''
 def predict(request):
