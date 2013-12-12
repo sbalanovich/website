@@ -23,8 +23,8 @@ def test_ajax(request):
         try:
         	with open('visualization/clf.pickle', 'rb') as handle:
         		b = pickle.load(handle)
-        except IOError:
-        	return HttpResponse(json.dumps(["Unable to retrieve CLF", "Unable to retrieve CLF"]))
+        except Exception, e:
+        	print str(e)
         clf, vect = b
         m = 1727.23857077
         b = -409.438149837
