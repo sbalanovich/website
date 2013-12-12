@@ -25,11 +25,11 @@ def test_ajax(request):
         file_path = os.path.join(module_dir, 'clf.pickle')
         try:
         	with open(file_path, 'rb') as handle:
-                return "lol"
         		tup = pickle.load(handle)
+                return HttpResponse(json.dumps(["lol", "lol"]))
         except Exception, e:
         	print str(e)
-            return "ohai"
+            return HttpResponse(json.dumps(["lolz", "lolz"]))
         clf, vect = tup
         m = 1727.23857077
         b = -409.438149837
